@@ -1,0 +1,34 @@
+{
+    "name": "franklin-web-devstack",
+    "version": "1.0.0",
+    "description": "Simple HTML + SCSS + JS starter with Tailwind and cache-busting build.",
+    "type": "module",
+    "scripts": {
+        "clean": "rimraf dist",
+        "build:css:tailwind": "tailwindcss -i ./src/styles/tailwind.css -o ./dist/assets/css/tailwind.css --minify",
+        "build:css:scss": "sass --load-path=node_modules ./src/scss:./dist/assets/css --no-source-map --style=compressed",
+        "build:css": "npm-run-all build:css:*",
+        "build:js": "esbuild src/js/*.js --bundle --minify --sourcemap --outdir=dist/assets/js",
+        "build:static": "node scripts/copy-static.mjs",
+        "build:rev": "node scripts/rev-assets.mjs",
+        "build": "npm-run-all clean build:css build:js build:static build:rev",
+        "dev:css:tailwind": "tailwindcss -i ./src/styles/tailwind.css -o ./dist/assets/css/tailwind.css --watch",
+        "dev:css:scss": "sass --load-path=node_modules ./src/scss:./dist/assets/css --watch --style=expanded",
+        "dev:js": "esbuild src/js/*.js --bundle --sourcemap --outdir=dist/assets/js --watch",
+        "dev:static": "npm run build:static && chokidar \"src/**/*.html\" -c \"node scripts/copy-static.mjs\"",
+        "dev:serve": "live-server dist --port=4173 --quiet",
+        "dev": "npm-run-all --parallel dev:css:* dev:js dev:static dev:serve"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.0",
+        "chokidar-cli": "^3.0.0",
+        "esbuild": "^0.24.0",
+        "live-server": "^1.2.2",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.4.0",
+        "rimraf": "^5.0.0",
+        "sass": "^1.80.0",
+        "serve": "^14.0.0",
+        "tailwindcss": "^3.4.0"
+    }
+}
