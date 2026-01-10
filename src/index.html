@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8" />
+        <title>Franklin's web devstack</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="./assets/css/tailwind.css" />
+        <link rel="stylesheet" href="./assets/css/main.css" />
+    </head>
+    <body class="tw-min-h-screen tw-bg-[#cbbba6] tw-text-[#3d2a1c]">
+        <header class="tw-border-b tw-border-[#a79e8b] tw-bg-[#c7b29a]/95 tw-backdrop-blur tw-sticky tw-top-0 tw-z-10 tw-shadow-sm">
+            <div class="tw-mx-auto tw-flex tw-max-w-5xl tw-items-center tw-justify-between tw-px-4 tw-py-3">
+                <h1 class="tw-text-lg tw-font-semibold tw-tracking-tight"><span class="tw-font-mono">>_</span> Franklin's web devstack</h1>
+                <span class="tw-rounded-full tw-bg-[#8d7a65]/30 tw-px-3 tw-py-1 tw-text-xs tw-font-medium tw-text-[#2d1f15] tw-border tw-border-[#8d7a65]/40"> Tailwind + SCSS + JS </span>
+            </div>
+        </header>
+
+        <main class="tw-mx-auto tw-max-w-5xl tw-px-4 tw-py-8">
+            <section class="tw-mb-4 tw-rounded-xl tw-border tw-border-[#a79e8b] tw-bg-[#c7b29a]/60 tw-p-6">
+                <h2 class="tw-mb-2 tw-text-xl tw-font-semibold">It works! 🚀</h2>
+                <p class="tw-mb-4 tw-text-sm tw-text-[#3d2a1c]"> This is just a simple layout to confirm that Tailwind, SCSS, JS bundling, and the build process are all working. </p>
+                <button
+                    id="demo-button"
+                    class="tw-rounded-lg tw-bg-[#4c382b] tw-px-4 tw-py-2 tw-text-sm tw-font-medium tw-text-[#fdf8f3] tw-shadow hover:tw-bg-[#785e4d] focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-[#cbbba6]"
+                >
+                    Click and check console!
+                </button>
+            </section>
+
+            <!-- Dev commands helper -->
+            <section class="tw-mb-4 tw-rounded-xl tw-border tw-border-[#a79e8b] tw-bg-[#c7b29a]/60 tw-p-6 tw-text-sm">
+                <h2 class="tw-mb-3 tw-text-lg tw-font-semibold tw-text-[#3d2a1c]"> Dev commands cheat sheet </h2>
+                <p class="tw-mb-4 tw-text-[#3d2a1c]"> The most common commands you can run in this project: </p>
+
+                <div class="tw-grid tw-gap-4 md:tw-grid-cols-2">
+                    <!-- Left column -->
+                    <div class="tw-space-y-3">
+                        <div class="tw-rounded-lg tw-border tw-border-[#a79e8b]/80 tw-bg-[#968066]/15 tw-p-3">
+                            <div class="tw-mb-1 tw-flex tw-items-center tw-justify-between">
+                                <span class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wide tw-text-[#3d2a1c]"> Run locally (with live reload) </span>
+                                <!-- DEV status badge (Tailwind emerald) -->
+                                <span class="tw-rounded-full tw-px-2 tw-text-[10px] tw-font-medium tw-border tw-bg-emerald-600 tw-text-white tw-border-emerald-700"> dev </span>
+                            </div>
+                            <div class="tw-relative tw-group">
+                                <button
+                                    type="button"
+                                    class="tw-absolute tw-right-2 tw-top-2 tw-items-center tw-gap-1 tw-rounded tw-border tw-border-[#754c31] tw-px-2 tw-text-[10px] tw-font-mono tw-text-white tw-shadow-sm hover:tw-bg-[#754c31] tw-inline-flex"
+                                    data-copy-target="pre-dev"
+                                >
+                                    Copy code
+                                </button>
+                                <pre id="pre-dev" class="tw-overflow-x-auto tw-rounded tw-bg-[#4c382b] tw-px-3 tw-py-2 tw-pr-16 tw-text-[11px] tw-font-mono tw-text-[#fdf8f3]">
+npm install
+npm run dev
+    </pre
+                                >
+                            </div>
+
+                            <p class="tw-mt-2 tw-text-xs tw-text-[#3d2a1c]"> Installs dependencies and starts the dev server with Tailwind, SCSS and JS watch. </p>
+                        </div>
+
+                        <div class="tw-rounded-lg tw-border tw-border-[#a79e8b]/80 tw-bg-[#968066]/15 tw-p-3">
+                            <div class="tw-mb-1 tw-flex tw-items-center tw-justify-between">
+                                <span class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wide tw-text-[#3d2a1c]"> Production build </span>
+                                <!-- PROD status badge (Tailwind amber) -->
+                                <span class="tw-rounded-full tw-bg-amber-600 tw-text-white tw-border-amber-700 tw-px-2 tw-text-[10px] tw-font-medium"> prod </span>
+                            </div>
+                            <div class="tw-relative">
+                                <button
+                                    type="button"
+                                    class="tw-absolute tw-right-2 tw-top-2 tw-items-center tw-gap-1 tw-rounded tw-border tw-border-[#754c31] tw-px-2 tw-text-[10px] tw-font-mono tw-text-white tw-shadow-sm hover:tw-bg-[#754c31] tw-inline-flex"
+                                    data-copy-target="pre-build"
+                                >
+                                    Copy code
+                                </button>
+                                <pre id="pre-build" class="tw-overflow-x-auto tw-rounded tw-bg-[#4c382b] tw-px-3 tw-py-2 tw-pr-16 tw-text-[11px] tw-font-mono tw-text-[#fdf8f3]">
+npm run build
+    </pre
+                                >
+                            </div>
+
+                            <p class="tw-mt-2 tw-text-xs tw-text-[#3d2a1c]"> Builds Tailwind + SCSS + JS, copies static files and adds cache-busting hashes to CSS/JS. </p>
+                        </div>
+                    </div>
+
+                    <!-- Right column -->
+                    <div class="tw-space-y-3">
+                        <div class="tw-rounded-lg tw-border tw-border-[#a79e8b]/80 tw-bg-[#968066]/15 tw-p-3">
+                            <span class="tw-mb-1 tw-block tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wide tw-text-[#3d2a1c]"> Partial builds </span>
+                            <ul class="tw-space-y-2 tw-text-xs tw-text-[#3d2a1c]">
+                                <li class="tw-flex tw-gap-2">
+                                    <!-- CSS status (Tailwind emerald) -->
+                                    <span class="tw-mt-1 tw-h-1.5 tw-w-1.5 tw-rounded-full tw-bg-emerald-600"></span>
+                                    <div>
+                                        <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">npm run build:css</code>
+                                        <div class="tw-text-[#3d2a1c]"> Build Tailwind and SCSS only. </div>
+                                    </div>
+                                </li>
+                                <li class="tw-flex tw-gap-2">
+                                    <!-- JS status (Tailwind sky) -->
+                                    <span class="tw-mt-1 tw-h-1.5 tw-w-1.5 tw-rounded-full tw-bg-sky-600"></span>
+                                    <div>
+                                        <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">npm run build:js</code>
+                                        <div class="tw-text-[#3d2a1c]"> Bundle and minify all <code>src/js/*.js</code> entrypoints. </div>
+                                    </div>
+                                </li>
+                                <li class="tw-flex tw-gap-2">
+                                    <!-- Static status (Tailwind amber) -->
+                                    <span class="tw-mt-1 tw-h-1.5 tw-w-1.5 tw-rounded-full tw-bg-amber-600"></span>
+                                    <div>
+                                        <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">npm run build:static</code>
+                                        <div class="tw-text-[#3d2a1c]"> Copy HTML and assets from <code>src/</code> to <code>dist/</code>. </div>
+                                    </div>
+                                </li>
+                                <li class="tw-flex tw-gap-2">
+                                    <!-- Rev status (Tailwind fuchsia) -->
+                                    <span class="tw-mt-1 tw-h-1.5 tw-w-1.5 tw-rounded-full tw-bg-fuchsia-600"></span>
+                                    <div>
+                                        <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">npm run build:rev</code>
+                                        <div class="tw-text-[#3d2a1c]"> Rename JS/CSS files with hashes and update references in HTML. </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tw-rounded-lg tw-border tw-border-[#a79e8b]/80 tw-bg-[#968066]/15 tw-p-3">
+                            <span class="tw-mb-1 tw-block tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wide tw-text-[#3d2a1c]"> Useful notes </span>
+                            <ul class="tw-list-disc tw-space-y-1 tw-pl-4 tw-text-xs tw-text-[#3d2a1c]">
+                                <li>
+                                    Edit templates in
+                                    <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">src/*.html</code>.
+                                </li>
+                                <li>
+                                    Custom SCSS lives in
+                                    <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">src/scss/main.scss</code>.
+                                </li>
+                                <li>
+                                    JS entrypoints go to
+                                    <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">src/js/*.js</code>.
+                                </li>
+                                <li>
+                                    The built site is always in
+                                    <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">dist/</code>.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tw-grid tw-gap-4 md:tw-grid-cols-2">
+                <article class="tw-rounded-lg tw-border tw-border-[#a79e8b] tw-bg-[#c7b29a]/60 tw-p-4 tw-text-sm">
+                    <h3 class="tw-mb-1 tw-font-semibold tw-text-[#2d1f15]">Tailwind</h3>
+                    <p class="tw-text-[#3d2a1c]">
+                        Tailwind in this stack uses the <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">tw-</code> prefix and only generates
+                        classes that are actually used in your templates and JS. Feel free to customize the setup in
+                        <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">tailwind.config.cjs</code>.
+                    </p>
+                </article>
+
+                <article class="tw-rounded-lg tw-border tw-border-[#a79e8b] tw-bg-[#c7b29a]/60 tw-p-4 tw-text-sm">
+                    <h3 class="tw-mb-1 tw-font-semibold tw-text-[#2d1f15]">SCSS</h3>
+                    <p class="tw-text-[#3d2a1c]">
+                        Write your custom styles in
+                        <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">src/scss/main.scss</code>. The output is in
+                        <code class="tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded">dist/assets/css/main.css</code>.
+                    </p>
+                </article>
+            </section>
+        </main>
+
+        <script type="module" src="./assets/js/main.js"></script>
+    </body>
+</html>
