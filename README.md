@@ -248,6 +248,30 @@ In production (`npm run build`), all `.html` files in `dist/` get their `<link>`
 
 ---
 
+## Vendor assets (`devstackAssets`)
+
+If you need to copy extra vendor files from `node_modules` into `dist` (fonts, JS bundles, …), you can configure them in `package.json` under the `devstackAssets` field.
+
+Example for Font Awesome webfonts:
+
+```jsonc
+{
+    "devstackAssets": [
+        {
+            "from": "node_modules/@fortawesome/fontawesome-free/webfonts",
+            "to": "assets/webfonts"
+        }
+    ]
+}
+```
+
+-   `from` – path relative to the project root (usually inside `node_modules/...`).
+-   `to` – path **relative to `dist/`**, so this example copies to `dist/assets/webfonts`.
+
+The `scripts/copy-static.mjs` script automatically reads `devstackAssets` and copies these files on both `npm run dev` and `npm run build`.
+
+---
+
 ## What this devstack does _not_ include
 
 Deliberately **not** included:
@@ -267,6 +291,14 @@ You can build your own “pro” version on top of it (e.g. add a Bootstrap, Rea
 -   Extend Tailwind’s theme with your brand palette.
 -   Add SCSS partials for reusable components (buttons, forms, layout).
 -   If the project grows, you can still keep this stack and progressively enhance it.
+
+---
+
+## Additional docs
+
+For more detailed guides and recipes, check the `/docs` folder in this project:
+
+-   [Font Awesome setup](docs/font_awesome.md) – how to install and configure Font Awesome (SCSS + webfonts via `devstackAssets`)
 
 ---
 
