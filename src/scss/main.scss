@@ -1,4 +1,3 @@
-// Example of using SCSS with Tailwind-generated styles
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
+// Import global styles
+
+@use './_global.scss';

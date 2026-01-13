@@ -36,14 +36,14 @@ Recommended setup:
 $fa-font-path: '../webfonts';
 
 // Core + icon styles
-@import '@fortawesome/fontawesome-free/scss/fontawesome';
-@import '@fortawesome/fontawesome-free/scss/solid';
-@import '@fortawesome/fontawesome-free/scss/regular';
-@import '@fortawesome/fontawesome-free/scss/brands';
+@use '@fortawesome/fontawesome-free/scss/fontawesome';
+@use '@fortawesome/fontawesome-free/scss/solid';
+@use '@fortawesome/fontawesome-free/scss/regular';
+@use '@fortawesome/fontawesome-free/scss/brands';
 
 // Your custom SCSS below...
-// @import "variables";
-// @import "layout";
+// @use "variables";
+// @use "layout";
 // ...
 ```
 
