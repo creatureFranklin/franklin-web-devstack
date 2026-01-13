@@ -170,8 +170,28 @@ In the demo layout you’ll see classes like:
 ></body>
 ```
 
-> 💡 **Customize me:**  
-> Feel free to tweak Tailwind in `tailwind.config.cjs` – add brand colors, fonts, spacing, etc.  
+### Tailwind extras (custom components)
+
+If you want to create reusable components based on Tailwind utilities (buttons, badges, etc.) using `@apply`, define them in `src/styles/tailwind.css` inside a `@layer` block, for example:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply tw-rounded-full tw-font-medium tw-transition-all tw-duration-300;
+    }
+}
+```
+
+@apply must go through the Tailwind pipeline, so keep these “extras” in src/styles/tailwind.css, not in SCSS.
+
+---
+
+> 💡 **Customize me:**
+> Feel free to tweak Tailwind in `tailwind.config.cjs` – add brand colors, fonts, spacing, etc.
 > Just keep the `tw-` prefix unless you explicitly want to use the default one.
 
 ---
@@ -214,7 +234,7 @@ Use SCSS for your custom styles that don’t fit well into utility classes, or f
     -   `src/js/main.js` → `dist/assets/js/main.js`
     -   `src/js/admin.js` → `dist/assets/js/admin.js`
 
--   In production (`npm run build`), JS files are also **minified** and renamed with a content hash.  
+-   In production (`npm run build`), JS files are also **minified** and renamed with a content hash.
     The HTML is automatically updated, so you don’t have to change script tags manually.
 
 ### Demo logic
