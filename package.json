@@ -16,7 +16,7 @@
         "dev:css:scss": "sass --load-path=node_modules ./src/scss:./dist/assets/css --watch --style=expanded",
         "dev:js": "esbuild src/js/*.js --bundle --sourcemap --outdir=dist/assets/js --watch",
         "dev:static": "npm run build:static && chokidar \"src/**/*.html\" -c \"node scripts/copy-static.mjs\"",
-        "dev:serve": "live-server dist --port=4173 --quiet",
+        "dev:serve": "node scripts/serve-dev.mjs",
         "dev": "npm-run-all --parallel dev:css:* dev:js dev:static dev:serve"
     },
     "devDependencies": {
