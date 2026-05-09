@@ -58,6 +58,14 @@ Runs everything in **watch mode**:
 -   copies HTML/static assets on change
 -   serves `dist/` via `live-server` with auto reload
 
+The dev server runs on port **4173** by default. To use a different port:
+
+```bash
+npm run dev --port=8000
+```
+
+The URL is printed in the terminal when the server starts.
+
 ```bash
 npm run build
 ```
