@@ -1,14 +1,16 @@
 // Entry point for the main application bundle.
+import { t, locale } from './i18n.js';
 
 // Simple demo of DOM interaction
-console.log("[FWP] Franklin's web devstack is ready.");
+console.log(`[FWP] Franklin's web devstack is ready. Locale: ${locale()}`);
 
 const demoButton = document.querySelector('#demo-button');
 
 if (demoButton) {
     demoButton.addEventListener('click', () => {
         console.log('[FWP] Hello from main.js! 🎉');
-        demoButton.textContent = 'Check console 👀';
+        // Example: use a translated string from JS at runtime
+        demoButton.textContent = t('hero.button') + ' 👀';
     });
 }
 

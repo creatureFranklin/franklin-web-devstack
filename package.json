@@ -10,12 +10,14 @@
         "build:css": "npm-run-all build:css:*",
         "build:js": "esbuild src/js/*.js --bundle --minify --sourcemap --outdir=dist/assets/js",
         "build:static": "node scripts/copy-static.mjs",
+        "build:i18n": "node scripts/build-i18n.mjs",
+        "build:i18n:locale": "node scripts/build-i18n.mjs",
         "build:rev": "node scripts/rev-assets.mjs",
-        "build": "npm-run-all clean build:css build:js build:static build:rev",
+        "build": "npm-run-all clean build:css build:js build:static build:i18n build:rev",
         "dev:css:tailwind": "tailwindcss -i ./src/styles/tailwind.css -o ./dist/assets/css/tailwind.css --watch",
         "dev:css:scss": "sass --load-path=node_modules ./src/scss:./dist/assets/css --watch --style=expanded",
         "dev:js": "esbuild src/js/*.js --bundle --sourcemap --outdir=dist/assets/js --watch",
-        "dev:static": "npm run build:static && chokidar \"src/**/*.html\" -c \"node scripts/copy-static.mjs\"",
+        "dev:static": "node scripts/copy-static.mjs && node scripts/build-i18n.mjs && chokidar \"src/**/*.html\" \"src/assets/**\" \"src/locales/**\" -c \"node scripts/copy-static.mjs && node scripts/build-i18n.mjs\"",
         "dev:serve": "node scripts/serve-dev.mjs",
         "dev": "npm-run-all --parallel dev:css:* dev:js dev:static dev:serve"
     },
@@ -32,5 +34,10 @@
         "tailwindcss": "^3.4.0"
     },
     "devstackAssets": [
-    ]
+    ],
+    "devstackI18n": {
+        "defaultLocale": "en",
+        "localesDir": "src/locales",
+        "siteUrl": "https://example.com"
+    }
 }
