@@ -1,0 +1,55 @@
+{
+  "lang": "cs",
+  "meta": {
+    "title": "Franklin's web devstack"
+  },
+  "header": {
+    "title": "<span class=\"tw-font-mono\">>_</span> Franklin's web devstack",
+    "badge": "Tailwind + SCSS + JS"
+  },
+  "hero": {
+    "heading": "Funguje to! 🚀",
+    "description": "Jednoduchý layout pro ověření, že Tailwind, SCSS, JS bundling a build proces fungují správně.",
+    "button": "Klikni a zkontroluj konzoli!"
+  },
+  "devCommands": {
+    "heading": "Přehled příkazů",
+    "intro": "Nejčastější příkazy, které v projektu spustíš:",
+    "runLocally": "Spustit lokálně (s live reload)",
+    "runLocallyDesc": "Nainstaluje závislosti a spustí dev server s Tailwind, SCSS a JS watch.",
+    "runLocallyCustomPortDesc": "Spustí dev server na vlastní portu (např. 8000).",
+    "runLocallyLocaleDesc": "Spustí dev server s vlastní výchozí lokalizací (např. en).", 
+    "productionBuild": "Produkční build",
+    "productionBuildDesc": "Sestaví Tailwind + SCSS + JS, zkopíruje statické soubory a přidá cache-busting hashe k CSS/JS.",
+    "partialBuilds": "Dílčí buildy",
+    "buildCssDesc": "Sestaví pouze Tailwind a SCSS.",
+    "buildJsDesc": "Sestaví a minifikuje všechny entrypointy <code>src/js/*.js</code>.",
+    "buildStaticDesc": "Zkopíruje HTML a assety ze <code>src/</code> do <code>dist/</code>.",
+    "buildRevDesc": "Přejmenuje JS/CSS soubory s hashy a aktualizuje reference v HTML.",
+    "usefulNotes": "Užitečné poznámky",
+    "noteTemplates": "Šablony edituj v",
+    "noteScss": "Vlastní SCSS je v",
+    "noteJs": "JS entrypointy patří do",
+    "noteDist": "Sestavený web je vždy v",
+    "noteI18n": "Překlady jsou v"
+  },
+  "tailwind": {
+    "heading": "Tailwind",
+    "description": "Tailwind v tomto stacku používá prefix <code class=\"tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded\">tw-</code> a generuje pouze třídy skutečně použité v šablonách a JS. Konfiguraci uprav v <code class=\"tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded\">tailwind.config.cjs</code>."
+  },
+  "scss": {
+    "heading": "SCSS",
+    "description": "Vlastní styly piš do <code class=\"tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded\">src/scss/main.scss</code>. Výstup je v <code class=\"tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded\">dist/assets/css/main.css</code>."
+  },
+  "moreDocs": {
+    "heading": "Další dokumentace",
+    "intro": "Podrobnější průvodce a recepty najdeš v těchto souborech projektu:",
+    "readme": "přehled tohoto devstacku.",
+    "fontAwesome": "jak nainstalovat a nakonfigurovat Font Awesome.",
+    "i18n": "kompletní průvodce vícejazyčnou podporou (i18n)."
+  },
+  "footer": {
+    "builtWith": "Vytvořeno s ❤️ pomocí Franklin's web devstack.",
+    "coffee": "☕ Podpořte mě na Buy Me a Coffee"
+  }
+}

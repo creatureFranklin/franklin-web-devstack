@@ -1,0 +1,55 @@
+{
+  "lang": "en",
+  "meta": {
+    "title": "Franklin's web devstack"
+  },
+  "header": {
+    "title": "<span class=\"tw-font-mono\">>_</span> Franklin's web devstack",
+    "badge": "Tailwind + SCSS + JS"
+  },
+  "hero": {
+    "heading": "It works! 🚀",
+    "description": "This is just a simple layout to confirm that Tailwind, SCSS, JS bundling, and the build process are all working.",
+    "button": "Click and check console!"
+  },
+  "devCommands": {
+    "heading": "Dev commands cheat sheet",
+    "intro": "The most common commands you can run in this project:",
+    "runLocally": "Run locally (with live reload)",
+    "runLocallyDesc": "Installs dependencies and starts the dev server with Tailwind, SCSS and JS watch.",
+    "runLocallyCustomPortDesc": "Starts the dev server on a custom port (e.g. 8000).",
+    "runLocallyLocaleDesc": "Starts the dev server with a custom default locale (e.g. en).",
+    "productionBuild": "Production build",
+    "productionBuildDesc": "Builds Tailwind + SCSS + JS, copies static files and adds cache-busting hashes to CSS/JS.",
+    "partialBuilds": "Partial builds",
+    "buildCssDesc": "Build Tailwind and SCSS only.",
+    "buildJsDesc": "Bundle and minify all <code>src/js/*.js</code> entrypoints.",
+    "buildStaticDesc": "Copy HTML and assets from <code>src/</code> to <code>dist/</code>.",
+    "buildRevDesc": "Rename JS/CSS files with hashes and update references in HTML.",
+    "usefulNotes": "Useful notes",
+    "noteTemplates": "Edit templates in",
+    "noteScss": "Custom SCSS lives in",
+    "noteJs": "JS entrypoints go to",
+    "noteDist": "The built site is always in",
+    "noteI18n": "Translations live in"
+  },
+  "tailwind": {
+    "heading": "Tailwind",
+    "description": "Tailwind in this stack uses the <code class=\"tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded\">tw-</code> prefix and only generates classes that are actually used in your templates and JS. Feel free to customize the setup in <code class=\"tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded\">tailwind.config.cjs</code>."
+  },
+  "scss": {
+    "heading": "SCSS",
+    "description": "Write your custom styles in <code class=\"tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded\">src/scss/main.scss</code>. The output is in <code class=\"tw-font-mono tw-text-[11px] tw-text-[#2d1f15] tw-bg-[#d4c4ae] tw-px-1 tw-py-0.5 tw-rounded\">dist/assets/css/main.css</code>."
+  },
+  "moreDocs": {
+    "heading": "More docs",
+    "intro": "For more detailed guides and recipes, check these files in your project:",
+    "readme": "overview of this devstack.",
+    "fontAwesome": "how to install and configure Font Awesome.",
+    "i18n": "complete guide to multi-language support (i18n)."
+  },
+  "footer": {
+    "builtWith": "Built with ❤️ using Franklin's web devstack.",
+    "coffee": "☕ Buy me a coffee"
+  }
+}

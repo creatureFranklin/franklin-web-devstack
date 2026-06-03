@@ -122,18 +122,26 @@ Simplified structure:
 ├─ tailwind.config.cjs
 ├─ scripts/
 │  ├─ copy-static.mjs      # copies HTML + assets from src/ to dist/
+│  ├─ build-i18n.mjs       # i18n build – replaces {{placeholders}}, injects hreflang
 │  └─ rev-assets.mjs       # adds hashes to CSS/JS and updates HTML
 ├─ src/
-│  ├─ index.html           # main demo page (brown theme)
+│  ├─ index.html           # main template (uses {{key}} placeholders)
+│  ├─ locales/
+│  │  ├─ en.json           # English translations (default locale)
+│  │  └─ cs.json           # Czech translations
 │  ├─ styles/
 │  │  └─ tailwind.css      # Tailwind entry (@tailwind base; components; utilities;)
 │  ├─ scss/
 │  │  └─ main.scss         # your custom SCSS
 │  ├─ js/
-│  │  └─ main.js           # demo JS (button + copy-to-clipboard)
+│  │  ├─ main.js           # demo JS (button + copy-to-clipboard)
+│  │  └─ i18n.js           # runtime t() helper – reads window.__i18n
 │  └─ assets/
 │     └─ ...               # images, fonts, extra static files
 └─ dist/
+   ├─ index.html           # default locale (en)
+   ├─ cs/
+   │  └─ index.html        # Czech variant
    └─ ...                  # built output (generated)
 ```
 
@@ -276,6 +284,42 @@ In production (`npm run build`), all `.html` files in `dist/` get their `<link>`
 
 ---
 
+## Internationalisation (i18n)
+
+The devstack has built-in support for generating multiple language variants from a single set of HTML templates.  
+See the full guide: **[docs/i18n.md](docs/i18n.md)**
+
+### Quick overview
+
+| What | Where |
+|------|-------|
+| Translation files | `src/locales/<lang>.json` |
+| Placeholder syntax | `{{key}}` / `{{section.key}}` in HTML |
+| Runtime JS helper | `import { t } from './i18n.js'` |
+| Config | `package.json` → `devstackI18n` |
+
+```jsonc
+// package.json
+"devstackI18n": {
+    "defaultLocale": "en",   // goes to dist/ root
+    "localesDir": "src/locales",
+    "siteUrl": "https://example.com"  // used for hreflang href attributes
+}
+```
+
+**Build output:**
+- `example.com/` → English (default)
+- `example.com/cs/` → Czech
+
+**Dev server with a specific locale:**
+
+```bash
+npm run dev               # default locale (en)
+npm run dev --locale=cs   # Czech
+```
+
+---
+
 ## Vendor assets (`devstackAssets`)
 
 If you need to copy extra vendor files from `node_modules` into `dist` (fonts, JS bundles, …), you can configure them in `package.json` under the `devstackAssets` field.
@@ -327,6 +371,7 @@ You can build your own “pro” version on top of it (e.g. add a Bootstrap, Rea
 For more detailed guides and recipes, check the `/docs` folder in this project:
 
 -   [Font Awesome setup](docs/font_awesome.md) – how to install and configure Font Awesome (SCSS + webfonts via `devstackAssets`)
+-   [i18n / Internationalisation](docs/i18n.md) – full guide to multi-language support, placeholders, JS runtime helper, hreflang
 
 ---
 
